@@ -1,5 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
+    <title>This is a page</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is what Google will show!">
+    <link rel="icon" href="images/favicon.ico"
 </head>
 <body>
     <h1>Hello World</h1> <!-- H1 is a large header tag-->
@@ -23,14 +28,54 @@
     <!-- Forms-->
     <form action="">
         <div>   <!-- div is a division or a section in an HTML document-->
-            Name: <input type="text">   <!-- input is where the user can enter data-->
+            Name: <input type="text" required>   <!-- input is where the user can enter data-->
         </div>
         <div>
-            Age: <input type="number">
+            Age: <input type="number" required> <!-- required must be entered to move one-->
+        </div>
+        <div>
+            <input type="checkbox" checked> <!-- check box is checked when loaded-->
+        </div>
+        <div>
+            <textarea></textarea>
+        </div>
+        <div>
+            Color: 
+            <select> <!-- Select creates a drop down menu to select one item-->
+                <option>Red</option>
+                <option>Blue</option>
+                <option selected>Green</option> <!-- selected is set to have this out put as default-->
+            </select>
+        </div>
+        <div>
+            Locations:
+            <select multiple> <!-- multiple allows you to select multiple choices-->
+                <option>Marlow</option>
+                <option>Duncan</option>
+                <option>Lawton</option>
+            </select>
         </div>
         <input type="submit" value="Save">
     </form>
-
+    <table> <!-- tables create a table to store data-->
+        <tr> <!-- tr is a table row-->
+            <th> <!-- th is table head-->
+                Monday
+            </th>
+            <th>
+                Tuesday
+            </th>
+            <th>
+                Wednesday
+            </th>
+        </tr>
+        <tr>
+            <td>1</td> <!-- td is table data-->
+            <td>22</td>
+            <td>33</td>
+        </tr>
+    </table>
 
 
 </body>
+</html>
