@@ -31,3 +31,21 @@ body {
 .nav ul li:hover {
     background-color: black;
 }
+
+.image-area {
+    background-image: url('../images/background.png');
+    background-color: black;
+    background-position: center center;
+    background-size: cover;
+    padding: 200px 0px 200px 0px ;
+}
+
+.image-text {
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 2.5rem;
+    max-width: 1020px;
+    margin: 0px auto;
+    padding: 0px 16px;
+}
