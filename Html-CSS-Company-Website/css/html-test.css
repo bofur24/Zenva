@@ -1,0 +1,22 @@
+
+
+h1 {
+    color: red;
+    background-color: blue;
+}
+
+
+/* id selector*/
+#mainPar {
+    color: orange;
+}
+
+/* class selector*/
+
+.veggie {
+    color: green;
+}
+
+.meat {
+    color: red;
+}
