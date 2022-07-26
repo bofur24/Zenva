@@ -16,7 +16,7 @@ body {
     padding: 0px;
     margin: 0px;
     list-style-type: none;
-    
+    font-size: 0px;
     
 }
 
@@ -68,4 +68,22 @@ body {
 
 .single-service p {
     padding: 0px 16px;
+}
+
+@media screen and (min-width: 700px) {
+    .nav ul {
+        text-align: right;
+    }
+
+    .nav ul li {
+        display: inline-block;
+        border-bottom: 0px;
+        border-left: 1px solid black;
+        text-align: left;
+    }
+
+    .single-service {
+        width: 50%;
+        float: left;
+    }
 }
