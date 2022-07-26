@@ -1,0 +1,36 @@
+* {
+    margin: 0px;
+}
+
+body {
+    background: rgba(255,0,0,.25)
+}
+
+/* any device screen width of 768 or higher */
+@media screen and (min-width: 768px) { 
+    body {
+        background: rgba(0,255,0,.25)
+    }
+}
+/* any device screen width of 1200 or higher */
+
+@media screen and (min-width: 1200px) { 
+    body {
+        background: rgba(0,0,255,.25)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
