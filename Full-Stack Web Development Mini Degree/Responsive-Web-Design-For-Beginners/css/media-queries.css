@@ -1,0 +1,74 @@
+/*Applies to EVERYTHING unless overridden elsewhere */
+
+* {
+    margin: 0px;
+}
+
+body {
+    background: rgba(255, 0, 0, .25)
+}
+
+header {
+    background: rgba(0, 0, 0, .25);
+    margin-bottom: 10px;
+    height: 50px;
+}
+
+section {
+    background: rgba(0, 0, 0, .25);
+    margin-bottom: 10px;
+    height: 1000px;
+}
+
+aside {
+    background: rgba(0, 0, 0, .25);
+    margin-bottom: 10px;
+    height: 1000px;
+    display: none;
+}
+
+footer {
+    background: rgba(0, 0, 0, .25);
+    height: 25px;
+}
+
+
+
+
+
+/*Applies to any device whoes screen width is 768px and wider*/
+
+@media screen and (min-width: 768px) {  /*When screen size be come 768px or bigger */
+    body {
+        background: rgba(0, 255, 0, .25);
+    }
+
+    aside {
+        display: block;
+    }
+}
+
+/*Applies to any device whoes screen width is 1200px and wider*/
+
+@media screen and (min-width: 1200px) {  /*When screen size be come 1200px or bigger */
+    body {
+        background: rgba(0,0 ,255,  .25);
+    }
+
+    section {
+        float: left;
+        width: 69%;
+        margin-right: 10px;
+    }
+    
+    aside {
+        float: right;
+        width: 30%;
+    }
+
+    footer {
+        clear: both;
+    }
+
+
+}
