@@ -1,0 +1,52 @@
+
+
+
+
+#parent {
+    background: rgba(255, 0, 0, .25);
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+ 
+
+}
+
+.child {
+    width: 25%;
+}
+
+.child1 {
+    background: rgba(255, 0, 0, .25);
+}
+
+.child2 {
+    background: rgba(0,255, 0, .25);
+}
+
+.child3 {
+    background: rgba(0, 0, 255, .25);
+}
+
+.child4 {
+    background: rgba(255, 0, 0, .25);
+}
+
+.child5 {
+    background: rgba(0,255, 0, .25);
+}
+
+.child6 {
+    background: rgba(0, 0, 255, .25);
+}
+
+.child7 {
+    background: rgba(255, 0, 0, .25);
+}
+
+.child8 {
+    background: rgba(0,255, 0, .25);
+}
+
+.child9 {
+    background: rgba(0, 0, 255, .25);
+}
