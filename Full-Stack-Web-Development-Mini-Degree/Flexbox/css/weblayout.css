@@ -4,14 +4,19 @@
     padding: 0px;
 }
 
+/*Header Section*/
+
 header {
-    background: rgba(0, 0, 0, .25)
+    background: rgba(0, 0, 0, .25);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 #logo {
     width: 100px;
     height: 50px;
-    background: rgba(0, 0, 0, .25)
+    background: rgba(0, 0, 0, .25);
 }
 
 nav {
@@ -19,20 +24,86 @@ nav {
 }
 
 nav ul li {
+    display: inline;
     
+
 }
+
+/* End Header Section*/
+
+/* Hero Section*/
 
 #hero {
-    background: rgba(0, 0, 0, .25)
+    background: rgba(0, 0, 0, .25);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
+
+.heroGraphic {
+    background: rgba(0, 0, 0, .25);
+} 
+
+.heroGraphic img {
+    width: 100%;
+}
+
+.heroText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heroHeading {
+    margin: 0px 0px 10px 10px;
+}   
+
+.heroButton {
+    background: rgba(0, 0, 0, .25);
+    width: 50%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0px auto;
+}   
+
+/*End Hero Section*/
+
+
+/*Article Section*/
 
 #articles {
-    background: rgba(0, 0, 0, .25)
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
-footer {
-    background: rgba(0, 0, 0, .25)
+.articleContainer {
+    background: rgba(0, 0, 0, .25);
+    width: 300px;
+    margin: 0 1em;
 }
+
+.articleContainer img {
+    width: 100%;
+}
+
+/*End Article Section*/
+
+/*Footer Section*/
+
+footer {
+    background: rgba(0, 0, 0, .25);
+    height: 50px;
+    text-align: center;
+}
+
+footer nav {
+    background: none;
+}
+
+
+/*End Footer Section*/
 
 
 
