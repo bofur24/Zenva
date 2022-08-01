@@ -1,0 +1,62 @@
+
+
+
+#parent {
+    background: lightblue;
+    /* padding: 10px; */
+    display: flex;
+    /*flex-direction: row-reverse; reverse the child elements*/
+    /*flex-direction: row;
+    flex-wrap: wrap;*/
+    /* flex-flow: row wrap; Shorthand for direction and wrap */
+    flex-flow: row nowrap;
+    /* justify-content: space-around; */
+
+    
+}
+
+.childItem {
+    /* width: 300px; */
+    flex-basis: 300px; /* base size*/
+
+}
+
+.child1 {
+    background: cornflowerblue;
+    flex-grow: 1; /*will grow with amount of space @ 900 break point*/
+}
+
+.child2 {
+    background: deepskyblue;
+    flex-grow: 3;
+}
+
+.child3 {
+    background: dodgerblue;
+    flex-shrink: 3;
+}
+
+.child4 {
+    background: khaki;
+}
+
+.child5 {
+    background: orange
+}
+
+.child6 {
+    background: gold;
+}
+
+.child7 {
+    background: darkgreen;
+}
+
+.child8 {
+    background: darkolivegreen;
+}
+
+
+.child9 {
+    background: forestgreen;
+}
