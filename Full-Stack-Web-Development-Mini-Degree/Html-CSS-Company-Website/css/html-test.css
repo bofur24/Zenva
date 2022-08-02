@@ -1,0 +1,65 @@
+
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-size: 1em; /* same as the parent size 16*/
+    font-family: Arial, Courier; /* Use the first, if not available use the second one and so on*/
+
+}
+
+span.keypoint  {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 2rem; /* use the root parent to size the font body is the root size 16 * 2 = 32px */
+}
+
+
+
+
+h1 {
+    color: red;
+    background-color: blue;
+    font-size: 3em; /* 3 times biger then the parent size of 16 * 3 = 48px*/
+}
+
+
+/* id selector*/
+#mainPar {
+    color: orange;
+}
+
+#box {
+ background-color: yellow;
+ width: 200px; /* 200 width + 20 left padding + 20 right padding  + 2 left border + 2 right border = 244 */
+ height: 100px;  
+ padding: 20px; 
+ border: 2px solid black;
+ margin: 10px auto; /* centering the div in the middle of the page using auto must have a width definded*/
+ text-align: center;
+ vertical-align: middle;
+ line-height: 100px; /*same as height to center text within the box*/
+
+}
+
+#box2 {
+    color: white;
+    background-color: blue;
+    margin-left: 10px;
+    padding: 0px 10px 30px 40px; /* top right bottom left clockwise*/
+}
+
+
+/* class selector*/
+
+.veggie {
+    color: green;
+}
+
+.meat {
+    color: red;
+}
+
