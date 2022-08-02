@@ -1,5 +1,6 @@
 // let name = value;
 
+
 const maxHealth = 100;
 let currentHealth = 50.5;
 currentHealth = maxHealth;
@@ -61,3 +62,11 @@ console.log(message);
 console.log(upperName);
 console.log(lowerName);
 console.log(zen);
+
+let maxHealth = 100;
+let currentHealth = 50.5;
+currentHealth = maxHealth;
+
+let isGameOver = false;
+isGameOver = true;
+
