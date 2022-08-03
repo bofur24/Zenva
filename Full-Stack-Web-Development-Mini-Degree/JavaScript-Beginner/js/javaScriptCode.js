@@ -51,10 +51,29 @@ health-- // health - 1
 
 health = (health * 2) + (health / 5);
 
+// > >= < <= == !=
+
+let number1 = 5;
+let number2 = 10
+
+let result = number1 > number2; // false
+result = number1 == number2; // false
+result = number1 != number2; // true
+
+// || && !
+
+result = !result; // false
 
 
+result = number1 > number2 && number1 < number2; // both must be true to return ture.
+
+result = numnber1 > number2 || number1 < number2; // one must be true to return ture
 
 
+// ? :
+
+
+result = number1 > number2 ? number1 : number2; // ture on the left of the : false on the right of the :
 
 
 console.log(message);
