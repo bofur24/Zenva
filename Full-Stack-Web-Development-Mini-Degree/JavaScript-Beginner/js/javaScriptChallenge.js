@@ -18,11 +18,18 @@ health += 1;
 console.log(health);
 
 // isGameOver if lives are set to 0
+let numberOfLives = 3;
 
-let lives = 2;
+let isGameOver = !(numberOfLives > 0)
 
-let isGameOver = false;
 
-isGameOver = lives < 0 ? true : false;
+//let lives = 2;
+
+//let isGameOver = false;
+
+//isGameOver = lives < 0 ? true : false;
 
 console.log(`Is the game over ${isGameOver}`);
+
+
+
