@@ -2,6 +2,7 @@
 
 // let name = value;
 
+
 const maxHealth = 100;
 let currentHealth = 50.5;
 currentHealth = maxHealth;
@@ -85,7 +86,6 @@ console.log(upperName);
 console.log(lowerName);
 console.log(zen);
 
-
 // ** Arrays **
 
 let inventory = ["Shirt", "Axe", "Bread"];
@@ -107,3 +107,12 @@ let water = inventory.pop() // removes item at the end and returns it
 console.log(inventory) 
 
 console.log(water)
+
+let maxHealth = 100;
+let currentHealth = 50.5;
+currentHealth = maxHealth;
+
+let isGameOver = false;
+isGameOver = true;
+
+
