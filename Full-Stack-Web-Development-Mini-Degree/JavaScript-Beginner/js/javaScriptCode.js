@@ -107,3 +107,16 @@ let water = inventory.pop() // removes item at the end and returns it
 console.log(inventory) 
 
 console.log(water)
+
+/* *** multi arrays *** */
+
+
+let levels = [
+    [1.1, 1.2, 1.3], 
+    [2.1, 2.2, 2.3, 2.4],
+    [3.1, 3.2],
+];
+
+let firstWorld = levels[0]; // [1.1, 1.2, 1.3]
+let firstLevel = levels[0][1]; // 1.2
+firstLevel[0][1] = 1.4; 
