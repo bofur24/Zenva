@@ -47,3 +47,30 @@ levels[2].push(3.3);
 console.log(levels[2]);
 
 
+// return the health % from a function
+const maxHealth = 105;
+currentHealth = 77;
+
+function heal(healAmount = 10) {
+    let newHealth =  currentHealth += healAmount;
+    currentHealth = newHealth > 105 ? maxHealth : newHealth;
+    return calculatePercent(currentHealth, maxHealth);
+
+}
+
+function calculatePercent(dividend, divisor) {
+    return (dividend / divisor) * 100;
+     
+}
+
+
+console.log(`Your current healt is at ${heal(25)}%`); //currentHealth = 60
+console.log(`Your current health is ${currentHealth}`)
+
+
+
+
+
+
+
+
