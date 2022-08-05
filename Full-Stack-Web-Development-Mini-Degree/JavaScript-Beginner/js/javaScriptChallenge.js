@@ -31,5 +31,19 @@ let isGameOver = !(numberOfLives > 0)
 
 console.log(`Is the game over ${isGameOver}`);
 
+let levels = [
+    [1.1, 1.2, 1.3 ],
+    [2.1, 2.2, 2.3, 2.4],
+    [3.1, 3.2]
+]
+
+// remove one item from the second level
+
+levels[1].pop();
+console.log(levels[1])
+
+// added another level to the third level
+levels[2].push(3.3);
+console.log(levels[2]);
 
 
