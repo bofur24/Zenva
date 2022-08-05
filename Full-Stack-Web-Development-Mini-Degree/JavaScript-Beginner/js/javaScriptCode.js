@@ -130,5 +130,28 @@ function heal(healAmount = 10) {
 
 }
 
-console.log(heal(60)); //currentHealth = 60
+console.log(heal(10)); //currentHealth = 60
 console.log(`Your current health is ${currentHealth}`)
+
+function healthPer() {
+    return (currentHealth / maxHealth) * 100;
+}
+
+
+console.log(healthPer());
+
+/* If Statements */
+
+let keyPressed = "l";
+let xPos = 0;
+
+if (keyPressed == "l") {
+    xPos -= 1; // xPos = -1
+
+} else if (keyPressed == "r"){
+    xPos += 1; 
+} else {
+    xPos = 0;
+}
+
+
