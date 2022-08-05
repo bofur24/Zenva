@@ -108,11 +108,27 @@ console.log(inventory)
 
 console.log(water)
 
-let maxHealth = 100;
-let currentHealth = 50.5;
+currentHealth = 50.5;
 currentHealth = maxHealth;
 
-let isGameOver = false;
+
 isGameOver = true;
 
+/* *** Functions *** */
 
+
+/*function name () {
+    function body
+}
+*/
+currentHealth = 50;
+
+function heal(healAmount = 10) {
+    let newHealth =  currentHealth += healAmount;
+    currentHealth = newHealth > 100 ? maxHealth : newHealth;
+    return (currentHealth / maxHealth) * 100;
+
+}
+
+console.log(heal(60)); //currentHealth = 60
+console.log(`Your current health is ${currentHealth}`)
