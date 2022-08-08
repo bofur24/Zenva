@@ -147,6 +147,7 @@ let xPos = 0;
 const endPos = 5;
 let pos = 0;
 
+
 if (keyPressed == "l") {
     xPos -= 1; // xPos = -1
 

@@ -85,9 +85,12 @@ let startPos = 0
 endPos = 10;
 startPos = 5;
 let enemyPos = 8;
+// Answer Code
+isGameOver = false;
 
 
 
+// My Code
 while (startPos < endPos ) {
     startPos++;
     if(startPos === enemyPos) {
@@ -98,6 +101,20 @@ while (startPos < endPos ) {
 };
 
 console.log(startPos);
+
+// Answer Code
+while (!isGameOver) {
+    xPos++;
+    if(xPos >= endPos || xPos == enemyPos) {
+        isGameOver = true
+    }
+}
+
+if(isGameOver == true) {
+    console.log(`Your game is over`)
+} else {
+    console.log(`Your game is not over.`)
+}
 
 
 
