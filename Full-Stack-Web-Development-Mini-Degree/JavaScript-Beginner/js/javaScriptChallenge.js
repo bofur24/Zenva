@@ -67,6 +67,18 @@ function calculatePercent(dividend, divisor) {
 console.log(`Your current healt is at ${heal(25)}%`); //currentHealth = 60
 console.log(`Your current health is ${currentHealth}`)
 
+// stop when you reach the end at the Left
+
+let xPos = 0;
+let enPos = -5;
+
+if(keyPressed == "l" && xPos < endPos) {
+    xPos -= 1;
+    if(xPos == endPos) {
+        console.log("End of area move another direction.")
+    }
+}
+
 
 
 

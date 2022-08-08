@@ -144,6 +144,8 @@ console.log(healthPer());
 
 let keyPressed = "l";
 let xPos = 0;
+const endPos = 5;
+
 
 if (keyPressed == "l") {
     xPos -= 1; // xPos = -1
@@ -155,3 +157,13 @@ if (keyPressed == "l") {
 }
 
 
+if(keyPressed == "r" && xPos < endPos) {
+    xPos += 1;
+}
+
+if(keyPressed == "r") {
+
+    if(xPos < endPos) {
+        xPos +=1;
+    }
+}
