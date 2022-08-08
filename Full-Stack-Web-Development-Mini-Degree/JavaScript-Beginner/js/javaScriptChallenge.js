@@ -64,8 +64,60 @@ function calculatePercent(dividend, divisor) {
 }
 
 
-console.log(`Your current healt is at ${heal(25)}%`); //currentHealth = 60
+console.log(`Your current health is at ${heal(25)}%`); //currentHealth = 60
 console.log(`Your current health is ${currentHealth}`)
+
+// stop when you reach the end at the Left
+
+let xPos = 0;
+let endPos = 5;
+let startPos = 0
+
+// if(keyPressed == "l" && xPos > startPos) {
+//     xPos -= 1;
+//     if(xPos == endPos) {
+//         console.log("End of area move another direction.")
+//     }
+// }
+
+// use a while loop find the enemy and end the game
+
+endPos = 10;
+startPos = 5;
+let enemyPos = 8;
+// Answer Code
+isGameOver = false;
+
+
+
+// My Code
+while (startPos < endPos ) {
+    startPos++;
+    if(startPos === enemyPos) {
+        console.log(`The game is over you hit the enemy at postion ${enemyPos}`);
+        break;
+    }
+    
+};
+
+console.log(startPos);
+
+// Answer Code
+while (!isGameOver) {
+    xPos++;
+    if(xPos >= endPos || xPos == enemyPos) {
+        isGameOver = true
+    }
+}
+
+if(isGameOver == true) {
+    console.log(`Your game is over`)
+} else {
+    console.log(`Your game is not over.`)
+}
+
+
+
 
 
 
