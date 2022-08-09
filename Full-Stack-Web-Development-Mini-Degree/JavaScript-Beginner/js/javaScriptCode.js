@@ -224,3 +224,24 @@ items.forEach(function(element) {
 
 console.log(finalString)
 
+let gameCharacter = { //keys are properties of gameCharacter
+
+    name: "Keith",
+    xPos: 0,
+    items: ["Knife", "Food"], // key and values
+    move: function(x) {
+        this.xPos += x; //this refers to the gameCharacter property xPos with in "this" object
+    }
+
+};
+
+let name = gameCharacter.name; // set the gameCharcter object name to the varable name
+gameCharacter.items = ["Axe", "Bread"] // items changed to these new items.
+gameCharacter.move(5);
+let x = gameCharacter.xPos;
+
+gameCharacter.yPos = 0; // added to the gameCharacter as a new property
+gameCharacter.move = function(x,y) { //creating a new function with yPos
+    this.xPos += x;
+    this.yPos += y;
+}
