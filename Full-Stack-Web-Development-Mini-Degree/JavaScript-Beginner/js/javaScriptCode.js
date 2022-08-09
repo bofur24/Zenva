@@ -146,6 +146,8 @@ let keyPressed = "l";
 let xPos = 0;
 const endPos = 5;
 let pos = 0;
+let enemyPos = 6
+
 
 
 if (keyPressed == "l") {
@@ -204,4 +206,21 @@ function doSomething(someNum) {
     a += 10; // code will not be run becasue of the return statement
 };
 
+// for loops
+
+let items = ["Axe", "Shirt", "Knife"];
+let finalString = "In my inventory, I have "
+
+for(let i = 0; i < items.length; i++) {
+    let itemName = items[i];
+    finalString += itemName + " ";
+}
+
+console.log(finalString);
+
+items.forEach(function(element) {
+    finalString += element + " ";
+});
+
+console.log(finalString)
 
