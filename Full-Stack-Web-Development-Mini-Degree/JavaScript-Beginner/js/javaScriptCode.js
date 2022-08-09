@@ -175,4 +175,33 @@ while (pos < endPos) {
 }
 
 
+while (xPos < endPos) {
+    xPos++;
+    if (xPos == enemyPos) {
+        break; // breaks out of the loop when this code is ran
+    }
+}
+
+
+// skip every odd number with continue
+
+while (xPos < endPos) {
+    if (xPos %2 == 1) {
+        xPos += 2;
+        continue; // skip the bottom code when it is odd.
+    }
+    xPos++;
+    if (xPos == enemyPos) {
+        break;
+    }
+}
+
+
+function doSomething(someNum) {
+    let a = 5;
+    let result = a + someNum;
+    return result;
+    a += 10; // code will not be run becasue of the return statement
+};
+
 
