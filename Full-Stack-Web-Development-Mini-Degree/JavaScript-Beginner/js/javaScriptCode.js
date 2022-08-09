@@ -146,6 +146,8 @@ let keyPressed = "l";
 let xPos = 0;
 const endPos = 5;
 let pos = 0;
+let enemyPos = 6
+
 
 
 if (keyPressed == "l") {
@@ -175,4 +177,71 @@ while (pos < endPos) {
 }
 
 
+while (xPos < endPos) {
+    xPos++;
+    if (xPos == enemyPos) {
+        break; // breaks out of the loop when this code is ran
+    }
+}
 
+
+// skip every odd number with continue
+
+while (xPos < endPos) {
+    if (xPos %2 == 1) {
+        xPos += 2;
+        continue; // skip the bottom code when it is odd.
+    }
+    xPos++;
+    if (xPos == enemyPos) {
+        break;
+    }
+}
+
+
+function doSomething(someNum) {
+    let a = 5;
+    let result = a + someNum;
+    return result;
+    a += 10; // code will not be run becasue of the return statement
+};
+
+// for loops
+
+let items = ["Axe", "Shirt", "Knife"];
+let finalString = "In my inventory, I have "
+
+for(let i = 0; i < items.length; i++) {
+    let itemName = items[i];
+    finalString += itemName + " ";
+}
+
+console.log(finalString);
+
+items.forEach(function(element) {
+    finalString += element + " ";
+});
+
+console.log(finalString)
+
+let gameCharacter = { //keys are properties of gameCharacter
+
+    name: "Keith",
+    xPos: 0,
+    items: ["Knife", "Food"], // key and values
+    move: function(x) {
+        this.xPos += x; //this refers to the gameCharacter property xPos with in "this" object
+    }
+
+};
+
+let name = gameCharacter.name; // set the gameCharcter object name to the varable name
+gameCharacter.items = ["Axe", "Bread"] // items changed to these new items.
+gameCharacter.move(5);
+let x = gameCharacter.xPos;
+
+gameCharacter.yPos = 0; // added to the gameCharacter as a new property
+gameCharacter.move = function(x,y) { //creating a new function with yPos
+    this.xPos += x;
+    this.yPos += y;
+}
