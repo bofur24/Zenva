@@ -256,3 +256,24 @@ gameCharacter.move = function(x,y) { //creating a new function with yPos
 
 console.log(gameCharacter.title);
 console.log(gameCharacter.maxHealth) //undefined
+
+// constructor function to crate objects
+
+function gameCharacter1(name, xPos, health) {
+    this.name = name;
+    this.xPos = xPos;
+    this.health = health;
+    this.move = function(x) {
+        this.xPos += x;
+    }
+    this.class = "Human"
+}
+
+
+let gc1 = new gameCharacter1("Link", 0, 100) //creating a new instance of gc1
+let gc2 = new gameCharacter1("Zelda", 1, 100 )
+
+console.log(gc1);
+console.log(gc2);
+
+
