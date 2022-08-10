@@ -227,6 +227,14 @@ console.log(finalString)
 let gameCharacter = { //keys are properties of gameCharacter
 
     name: "Keith",
+    class: "Human",
+    health: 100,
+    get title() { // getters
+        return this.name + " the " + this.class
+    },
+    set maxHealth(h) { //setter
+        return this.health = h;
+    },
     xPos: 0,
     items: ["Knife", "Food"], // key and values
     move: function(x) {
@@ -245,3 +253,6 @@ gameCharacter.move = function(x,y) { //creating a new function with yPos
     this.xPos += x;
     this.yPos += y;
 }
+
+console.log(gameCharacter.title);
+console.log(gameCharacter.maxHealth) //undefined
