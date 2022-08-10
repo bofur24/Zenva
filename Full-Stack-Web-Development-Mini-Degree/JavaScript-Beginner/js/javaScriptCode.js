@@ -266,7 +266,7 @@ function gameCharacter1(name, xPos, health) {
     this.move = function(x) {
         this.xPos += x;
     }
-    this.class = "Human"
+
 }
 
 
@@ -276,4 +276,18 @@ let gc2 = new gameCharacter1("Zelda", 1, 100 )
 console.log(gc1);
 console.log(gc2);
 
+//prototypes
+gc1.yPos = 5;
+gc2.yPos; // undefined reference error
 
+gameCharacter1.prototype.class = "Human";
+
+console.log(gc1);
+
+let heal5 = function(amount) {
+    this.health += amount;
+}
+
+gameCharacter1.prototype.heal = heal;
+
+console.log(gc1.heal(10))
