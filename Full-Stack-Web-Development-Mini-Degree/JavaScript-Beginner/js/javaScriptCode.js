@@ -227,6 +227,14 @@ console.log(finalString)
 let gameCharacter = { //keys are properties of gameCharacter
 
     name: "Keith",
+    class: "Human",
+    health: 100,
+    get title() { // getters
+        return this.name + " the " + this.class
+    },
+    set maxHealth(h) { //setter
+        return this.health = h;
+    },
     xPos: 0,
     items: ["Knife", "Food"], // key and values
     move: function(x) {
@@ -245,3 +253,41 @@ gameCharacter.move = function(x,y) { //creating a new function with yPos
     this.xPos += x;
     this.yPos += y;
 }
+
+console.log(gameCharacter.title);
+console.log(gameCharacter.maxHealth) //undefined
+
+// constructor function to crate objects
+
+function gameCharacter1(name, xPos, health) {
+    this.name = name;
+    this.xPos = xPos;
+    this.health = health;
+    this.move = function(x) {
+        this.xPos += x;
+    }
+
+}
+
+
+let gc1 = new gameCharacter1("Link", 0, 100) //creating a new instance of gc1
+let gc2 = new gameCharacter1("Zelda", 1, 100 )
+
+console.log(gc1);
+console.log(gc2);
+
+//prototypes
+gc1.yPos = 5;
+gc2.yPos; // undefined reference error
+
+gameCharacter1.prototype.class = "Human";
+
+console.log(gc1);
+
+let heal5 = function(amount) {
+    this.health += amount;
+}
+
+gameCharacter1.prototype.heal = heal;
+
+console.log(gc1.heal(10))
