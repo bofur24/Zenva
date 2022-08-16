@@ -291,3 +291,37 @@ let heal5 = function(amount) {
 gameCharacter1.prototype.heal = heal;
 
 console.log(gc1.heal(10))
+
+
+// Classes
+
+class gameCharacter2 {
+    constructor(name, xPos, health) {
+        this.name = name;
+        this.xPos = xPos;
+        this.health = health;
+
+        }
+        move(x) {
+            this.xPos += x;
+        }
+}
+
+
+class humanCharacter extends gameCharacter {
+    constructor(name, xPos, health) {
+        super(name, xPos, health);
+        this.classification = "Human";
+    }
+}
+
+
+
+let gc3 = new gameCharacter("Keith", 0, 100);
+
+gc3.move(5);
+gc3.name;
+
+let h1 = new humanCharacter("Zenva", 0, 150);
+
+
