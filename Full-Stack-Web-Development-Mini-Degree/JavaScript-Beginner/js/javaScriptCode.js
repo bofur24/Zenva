@@ -308,7 +308,7 @@ class gameCharacter2 {
 }
 
 
-class humanCharacter extends gameCharacter {
+class humanCharacter extends gameCharacter2 {
     constructor(name, xPos, health) {
         super(name, xPos, health);
         this.classification = "Human";
@@ -317,11 +317,11 @@ class humanCharacter extends gameCharacter {
 
 
 
-let gc3 = new gameCharacter("Keith", 0, 100);
+let gc3 = new gameCharacter2("Keith", 0, 100);
 
-gc3.move(5);
-gc3.name;
+console.log(gc3.move(5));
+console.log(gc3.name);
 
 let h1 = new humanCharacter("Zenva", 0, 150);
 
-
+console.log(h1.health)
