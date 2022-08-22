@@ -12,6 +12,7 @@ class GameCharacter {
         this.height = height;
         this.color = color;
         this.speed = speed;
+        this.maxSpeed = 4;
     }
 
     moveVeritcally() {
@@ -37,7 +38,24 @@ let enemies = [
     new GameCharacter(700, 50, width, width, "rgb(0, 0, 255)", 4)
 ]
 
-let player = new GameCharacter(50, 225, width, width, "rgb(0, 255, 255)", 2);
+let player = new GameCharacter(50, 225, width, width, "rgb(0, 255, 255)", 0);
+
+document.onkeydown = function(event) {
+    let keyPressed = event.keyCode;
+    // Right Arrow Key Pressed Move right
+    if (keyPressed == 39) {
+        player.speed = player.maxSpeed;
+    }
+    // Left Arrow Key Pressed Move Left
+    if(keyPressed == 37) {
+        player.speed = -player.maxSpeed;
+    }
+};
+
+document.onkeyup = function(event) {
+    player.speed = 0;
+}
+
 
 let draw = function() {
     ctx.clearRect(0, 0, screenWidth, screenHeight);
@@ -56,6 +74,8 @@ let draw = function() {
 }
 
 let update = function() {
+    player.moveHorizontally();
+
     enemies.forEach(function(element) {
         element.moveVeritcally();
     })
