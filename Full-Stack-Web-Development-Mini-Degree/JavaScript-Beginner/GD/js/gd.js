@@ -56,6 +56,13 @@ document.onkeyup = function(event) {
     player.speed = 0;
 }
 
+let check
+checkCollisions = function(rect1, rec2) {
+    let xOverlap = Math.abs(rect1.x - rec2.x) <= Math.max(rect1.width - rec2.width);
+    let yOverlap = Math.abs(rect1.y - rec2.y) <= Math.max(rect1.height - rec2.height);
+    return xOverlap && yOverlap;
+}
+
 
 let draw = function() {
     ctx.clearRect(0, 0, screenWidth, screenHeight);
@@ -77,8 +84,11 @@ let update = function() {
     player.moveHorizontally();
 
     enemies.forEach(function(element) {
+        if (checkCollisions(player, element)) {
+            alert("Collision Detected");
+        }
         element.moveVeritcally();
-    })
+    });
 
 }
 
