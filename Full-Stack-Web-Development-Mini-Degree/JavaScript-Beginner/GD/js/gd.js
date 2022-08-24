@@ -3,6 +3,7 @@ let ctx = canvas.getContext('2d');
 const screenWidth = 1000;
 const screenHeight = 500;
 const width = 50;
+let isGameLive = true;
 
 class GameCharacter {
     constructor(x, y, width, height, color, speed) {
@@ -40,6 +41,8 @@ let enemies = [
 
 let player = new GameCharacter(50, 225, width, width, "rgb(0, 255, 255)", 0);
 
+let goal = new GameCharacter(screenWidth - width, 200, width, 100, "rgb(0, 0, 0)", 0);
+
 document.onkeydown = function(event) {
     let keyPressed = event.keyCode;
     // Right Arrow Key Pressed Move right
@@ -56,11 +59,13 @@ document.onkeyup = function(event) {
     player.speed = 0;
 }
 
-let check
-checkCollisions = function(rect1, rec2) {
-    let xOverlap = Math.abs(rect1.x - rec2.x) <= Math.max(rect1.width - rec2.width);
-    let yOverlap = Math.abs(rect1.y - rec2.y) <= Math.max(rect1.height - rec2.height);
-    return xOverlap && yOverlap;
+let checkCollisions = function(rect1, rect2) {  
+    let rect1x2 = rect1.x + rect1.width;
+    let rect2x2 = rect2.x + rect2.width;
+    let rect1y2 = rect1.y + rect1.height;
+    let rect2y2 = rect2.y + rect2.height;
+    
+    return rect1.x < rect2x2 && rect1x2 > rect2.x && rect1.y < rect2y2 && rect1y2 > rect2.y;
 }
 
 
@@ -77,26 +82,38 @@ let draw = function() {
         ctx.fillRect(element.x, element.y, element.width, element.height)
     });
 
+    ctx.fillStyle = goal.color;
+    ctx.fillRect(goal.x, goal.y, goal.width, goal.height);
 
 }
 
 let update = function() {
+    if (checkCollisions(player, goal)) {
+        endGameLogic("You Win!!")
+    }    
     player.moveHorizontally();
 
     enemies.forEach(function(element) {
         if (checkCollisions(player, element)) {
-            alert("Collision Detected");
+            endGameLogic("Game Over!!")
         }
         element.moveVeritcally();
     });
 
 }
 
+let endGameLogic = function(text) {
+    isGameLive = false;
+    alert(text);
+    window.location = "";
+}
+
 let step = function() {
     update()
     draw();
-
-    window.requestAnimationFrame(step);
+    if (isGameLive) {
+        window.requestAnimationFrame(step);
+    }    
 }
 
 step();
