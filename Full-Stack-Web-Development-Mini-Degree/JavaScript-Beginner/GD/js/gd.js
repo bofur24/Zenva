@@ -5,6 +5,9 @@ const screenHeight = 500;
 const width = 50;
 let isGameLive = true;
 
+let isRightKeyPressed = false;
+let isLeftKeyPressed = false;
+
 class GameCharacter {
     constructor(x, y, width, height, color, speed) {
         this.x = x;
@@ -39,24 +42,73 @@ let enemies = [
     new GameCharacter(700, 50, width, width, "rgb(0, 0, 255)", 4)
 ]
 
-let player = new GameCharacter(50, 225, width, width, "rgb(0, 255, 255)", 0);
+let player = new GameCharacter(50, 200, width, width, "rgb(0, 255, 200)", 0);
 
 let goal = new GameCharacter(screenWidth - width, 200, width, 100, "rgb(0, 0, 0)", 0);
 
+let sprites = {}
+
+let loadSprites = function() {
+    sprites.player = new Image();
+    sprites.player.src = 'images/hero.png'
+
+    sprites.background = new Image();
+    sprites.background.src = 'images/floor.png'
+
+    sprites.enemy = new Image();
+    sprites.enemy.src = 'images/enemy.png'
+
+    sprites.goal = new Image();
+    sprites.goal.src = 'images/chest.png'
+}
+
 document.onkeydown = function(event) {
+    // let keyPressed = event.keyCode;
+    // // Right Arrow Key Pressed Move right
+    // if (keyPressed == 39) {
+    //     player.speed = player.maxSpeed;
+    // // Left Arrow Key Pressed Move Left    
+    // }else if (keyPressed == 37) {
+    //     player.speed = -player.maxSpeed;
+    // }  
     let keyPressed = event.keyCode;
     // Right Arrow Key Pressed Move right
     if (keyPressed == 39) {
+        isRightKeyPressed = true;
         player.speed = player.maxSpeed;
-    }
-    // Left Arrow Key Pressed Move Left
-    if(keyPressed == 37) {
+    // Left Arrow Key Pressed Move Left    
+    }else if (keyPressed == 37) {
+        isLeftKeyPressed = true;
         player.speed = -player.maxSpeed;
-    }
+    }  
+
+
 };
 
 document.onkeyup = function(event) {
-    player.speed = 0;
+    // let keyPressed = event.keyCode;
+    // if (keyPressed == 39 || keyPressed == 37) {
+    //     player.speed = 0;
+    // }
+    let keyPressed = event.keyCode;
+    if (keyPressed == 39) {
+        isRightKeyPressed = false;
+        if(isLeftKeyPressed) {
+            player.speed = -player.maxSpeed;
+        } else {
+            player.speed = 0;
+        }
+    }else if (keyPressed == 37) {
+        isLeftKeyPressed = false;
+        if(isRightKeyPressed) {
+            player.speed = player.maxSpeed;
+        } else {
+            player.speed = 0;
+        }
+    }
+
+
+
 }
 
 let checkCollisions = function(rect1, rect2) {  
@@ -72,18 +124,25 @@ let checkCollisions = function(rect1, rect2) {
 let draw = function() {
     ctx.clearRect(0, 0, screenWidth, screenHeight);
 
-    ctx.fillStyle = player.color;
-    ctx.fillRect(player.x, player.y, player.width, player.height);
+    ctx.drawImage(sprites.background, 0, 0);
+    ctx.drawImage(sprites.player, player.x, player.y);
+    ctx.drawImage(sprites.goal, goal.x, goal.y);
+
+
+    // ctx.fillStyle = player.color;
+    // ctx.fillRect(player.x, player.y, player.width, player.height);
 
     // ctx.fillStyle = rectangle.color;
     // ctx.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
     enemies.forEach(function(element) {
-        ctx.fillStyle = element.color;
-        ctx.fillRect(element.x, element.y, element.width, element.height)
+        ctx.drawImage(sprites.enemy, element.x, element.y);
+        
+        // ctx.fillStyle = element.color;
+        // ctx.fillRect(element.x, element.y, element.width, element.height)
     });
 
-    ctx.fillStyle = goal.color;
-    ctx.fillRect(goal.x, goal.y, goal.width, goal.height);
+    // ctx.fillStyle = goal.color;
+    // ctx.fillRect(goal.x, goal.y, goal.width, goal.height);
 
 }
 
@@ -116,6 +175,7 @@ let step = function() {
     }    
 }
 
+loadSprites();
 step();
 
 
