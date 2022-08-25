@@ -39,9 +39,25 @@ let enemies = [
     new GameCharacter(700, 50, width, width, "rgb(0, 0, 255)", 4)
 ]
 
-let player = new GameCharacter(50, 225, width, width, "rgb(0, 255, 255)", 0);
+let player = new GameCharacter(50, 200, width, width, "rgb(0, 255, 200)", 0);
 
 let goal = new GameCharacter(screenWidth - width, 200, width, 100, "rgb(0, 0, 0)", 0);
+
+let sprites = {}
+
+let loadSprites = function() {
+    sprites.player = new Image();
+    sprites.player.src = 'images/hero.png'
+
+    sprites.background = new Image();
+    sprites.background.src = 'images/floor.png'
+
+    sprites.enemy = new Image();
+    sprites.enemy.src = 'images/enemy.png'
+
+    sprites.goal = new Image();
+    sprites.goal.src = 'images/chest.png'
+}
 
 document.onkeydown = function(event) {
     let keyPressed = event.keyCode;
@@ -72,18 +88,25 @@ let checkCollisions = function(rect1, rect2) {
 let draw = function() {
     ctx.clearRect(0, 0, screenWidth, screenHeight);
 
-    ctx.fillStyle = player.color;
-    ctx.fillRect(player.x, player.y, player.width, player.height);
+    ctx.drawImage(sprites.background, 0, 0);
+    ctx.drawImage(sprites.player, player.x, player.y);
+    ctx.drawImage(sprites.goal, goal.x, goal.y);
+
+
+    // ctx.fillStyle = player.color;
+    // ctx.fillRect(player.x, player.y, player.width, player.height);
 
     // ctx.fillStyle = rectangle.color;
     // ctx.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
     enemies.forEach(function(element) {
-        ctx.fillStyle = element.color;
-        ctx.fillRect(element.x, element.y, element.width, element.height)
+        ctx.drawImage(sprites.enemy, element.x, element.y);
+        
+        // ctx.fillStyle = element.color;
+        // ctx.fillRect(element.x, element.y, element.width, element.height)
     });
 
-    ctx.fillStyle = goal.color;
-    ctx.fillRect(goal.x, goal.y, goal.width, goal.height);
+    // ctx.fillStyle = goal.color;
+    // ctx.fillRect(goal.x, goal.y, goal.width, goal.height);
 
 }
 
@@ -116,6 +139,7 @@ let step = function() {
     }    
 }
 
+loadSprites();
 step();
 
 
