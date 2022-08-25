@@ -5,6 +5,9 @@ const screenHeight = 500;
 const width = 50;
 let isGameLive = true;
 
+let isRightKeyPressed = false;
+let isLeftKeyPressed = false;
+
 class GameCharacter {
     constructor(x, y, width, height, color, speed) {
         this.x = x;
@@ -60,19 +63,52 @@ let loadSprites = function() {
 }
 
 document.onkeydown = function(event) {
+    // let keyPressed = event.keyCode;
+    // // Right Arrow Key Pressed Move right
+    // if (keyPressed == 39) {
+    //     player.speed = player.maxSpeed;
+    // // Left Arrow Key Pressed Move Left    
+    // }else if (keyPressed == 37) {
+    //     player.speed = -player.maxSpeed;
+    // }  
     let keyPressed = event.keyCode;
     // Right Arrow Key Pressed Move right
     if (keyPressed == 39) {
+        isRightKeyPressed = true;
         player.speed = player.maxSpeed;
-    }
-    // Left Arrow Key Pressed Move Left
-    if(keyPressed == 37) {
+    // Left Arrow Key Pressed Move Left    
+    }else if (keyPressed == 37) {
+        isLeftKeyPressed = true;
         player.speed = -player.maxSpeed;
-    }
+    }  
+
+
 };
 
 document.onkeyup = function(event) {
-    player.speed = 0;
+    // let keyPressed = event.keyCode;
+    // if (keyPressed == 39 || keyPressed == 37) {
+    //     player.speed = 0;
+    // }
+    let keyPressed = event.keyCode;
+    if (keyPressed == 39) {
+        isRightKeyPressed = false;
+        if(isLeftKeyPressed) {
+            player.speed = -player.maxSpeed;
+        } else {
+            player.speed = 0;
+        }
+    }else if (keyPressed == 37) {
+        isLeftKeyPressed = false;
+        if(isRightKeyPressed) {
+            player.speed = player.maxSpeed;
+        } else {
+            player.speed = 0;
+        }
+    }
+
+
+
 }
 
 let checkCollisions = function(rect1, rect2) {  
