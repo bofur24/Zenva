@@ -46,23 +46,27 @@
 //     alert('Page has been loaded');
 // };
 
-document.getElementById('div1').addEventListener('mouseover', function(event) {
-    event.target.style.backgroundColor = '#0000ff';
-    event.target.style.color = '#ffffff';
-});
+// document.getElementById('div1').addEventListener('mouseover', function(event) {
+//     event.target.style.backgroundColor = '#0000ff';
+//     event.target.style.color = '#ffffff';
+// });
 
-document.getElementById('div1').addEventListener('mouseout', function(event) {
-    event.target.style.backgroundColor = '#00ff00';
-    event.target.style.clor = '#ffffA1';
-})
-
-
-let button1 = document.getElementById('button1');
+// document.getElementById('div1').addEventListener('mouseout', function(event) {
+//     event.target.style.backgroundColor = '#00ff00';
+//     event.target.style.clor = '#ffffA1';
+// })
 
 
+// let button1 = document.getElementById('button1');
+// button1.addEventListener('click', function(event) {    
+//     target = event.target;
+//     alert(target.innerHTML);
+// })
 
-
-button1.addEventListener('click', function(event) {    
-    target = event.target;
-    alert(target.innerHTML);
+// Client Side Forms
+let form = document.getElementById('form');
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    let textInput = form.elements[0];
+    alert(textInput.value);
 })
