@@ -39,3 +39,30 @@
 // document.body.appendChild(newDiv); // placed at the end of the document body
 // div1.appendChild(newDiv); // placed at the end of the div1 id
 // document.body.removeChild(div1); // removed all div1 elements
+
+// adding event listeners
+
+// document.addEventListener('DOMContentLoaded'), function(event) {
+//     alert('Page has been loaded');
+// };
+
+document.getElementById('div1').addEventListener('mouseover', function(event) {
+    event.target.style.backgroundColor = '#0000ff';
+    event.target.style.color = '#ffffff';
+});
+
+document.getElementById('div1').addEventListener('mouseout', function(event) {
+    event.target.style.backgroundColor = '#00ff00';
+    event.target.style.clor = '#ffffA1';
+})
+
+
+let button1 = document.getElementById('button1');
+
+
+
+
+button1.addEventListener('click', function(event) {    
+    target = event.target;
+    alert(target.innerHTML);
+})
