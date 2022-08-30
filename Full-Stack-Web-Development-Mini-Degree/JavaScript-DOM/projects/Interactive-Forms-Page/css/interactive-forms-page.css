@@ -33,4 +33,9 @@ body {
     bottom: 20px;
     background-color: #9900ff;
     color: white;
+    cursor: pointer;
+}
+
+#saveButton:hover {
+    background-color: #b872e8;
 }
