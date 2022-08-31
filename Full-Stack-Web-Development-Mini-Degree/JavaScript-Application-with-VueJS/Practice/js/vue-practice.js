@@ -18,6 +18,16 @@ let secondVue = new Vue({
     }
 })
 
+Vue.component('grocery-item', {
+    props: ['groceryitem'],
+    template: '<li>{{ groceryitem }}</li>'
+})
+let thirdVue = new Vue ({
+    el: '#thirdDiv'
+})
+
+
+
 
 
 
