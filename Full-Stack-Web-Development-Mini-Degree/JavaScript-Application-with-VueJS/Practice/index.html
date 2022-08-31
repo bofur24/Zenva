@@ -10,6 +10,13 @@
 <body>
     <div id="firstDiv">
         <p>number is: {{ number }}</p>
+        <ul>
+            <li v-for="number_ in numbers"> {{ number_ }}</li>
+        </ul>
+    </div>
+    <div id="secondDiv">
+        <p v-if="isDoorOpen">Come in !</p>
+        <p v-else-if="!isDoorOpen">Stay out!</p>
     </div>
     
     <script src="js/vue-practice.js"></script>
