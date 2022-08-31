@@ -20,10 +20,17 @@ let secondVue = new Vue({
 
 Vue.component('grocery-item', {
     props: ['groceryitem'],
-    template: '<li>{{ groceryitem }}</li>'
+    template: '<li>{{ groceryitem.quantity }} {{ groceryitem.name }}</li>'
 })
 let thirdVue = new Vue ({
-    el: '#thirdDiv'
+    el: '#thirdDiv',
+    data: {
+        groceryItems: [
+            {name: 'Bread', quantity: 2},
+            {name: 'Cheese', quantity: 1},
+            {name: 'Apples', quantity: 4},
+        ]
+    }
 })
 
 

@@ -22,8 +22,10 @@
     </div>
     <div id="thirdDiv">
         <ul>
-            <grocery-item groceryitem="Bread"></grocery-item>
-            <grocery-item groceryitem="Cheese"></grocery-item>
+            <grocery-item v-for="item in groceryItems"
+                v-bind:groceryitem="item"
+            ></grocery-item>
+
         </ul>
     </div>
     
