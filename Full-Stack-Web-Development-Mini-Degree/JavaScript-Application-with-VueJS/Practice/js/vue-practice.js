@@ -10,6 +10,11 @@ let secondVue = new Vue({
     el: '#secondDiv',
     data: {
         isDoorOpen: true
+    },
+    methods: {
+        openCloseDoor: function() {
+            this.isDoorOpen = !this.isDoorOpen
+        }
     }
 })
 

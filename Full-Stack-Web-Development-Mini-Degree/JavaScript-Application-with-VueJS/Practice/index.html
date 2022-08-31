@@ -9,12 +9,14 @@
 </head>
 <body>
     <div id="firstDiv">
+        <input v-model="number">
         <p>number is: {{ number }}</p>
         <ul>
             <li v-for="number_ in numbers"> {{ number_ }}</li>
         </ul>
     </div>
     <div id="secondDiv">
+        <button v-on:click="openCloseDoor">Open or Close door</button>
         <p v-if="isDoorOpen">Come in !</p>
         <p v-else-if="!isDoorOpen">Stay out!</p>
     </div>
