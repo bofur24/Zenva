@@ -1,0 +1,12 @@
+html,
+body {
+    padding: 10px;
+    clear: both;
+    float: left;
+}
+
+#singleBlogPost {
+    border: solid 2px blue;
+    padding: 10px;
+
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/blog.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to my Blog Site!</h1>
+
+    <div id="blogPosts">
+
+        <div id="singleBlogPost">
+            <h2>{{ blogpost.title }}</h2>
+            <h3>{{ blogpost.username }}</h3>
+            <h4>{{ blogpost.date }}</h4>
+            <p>{{ blogpost.content }}</p>
+        </div>
+
+
+    </div>    
+</body>
+</html>
