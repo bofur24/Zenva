@@ -8,5 +8,6 @@ body {
 #singleBlogPost {
     border: solid 2px blue;
     padding: 10px;
-
+    margin-bottom: 50px;
 }
+
