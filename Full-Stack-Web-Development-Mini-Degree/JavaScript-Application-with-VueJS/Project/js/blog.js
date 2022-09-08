@@ -19,3 +19,29 @@ let blogVue = new Vue ({
         ]
     }
 })
+
+let postBlogVue = new Vue ({
+    el: '#blogPostCreation',
+    data: {
+        title: '',
+        username: '',
+        date: '',
+        content: '',
+    },
+    methods: {
+        publishPost: function() {
+            let postData = {
+                title: this.title,
+                username: this.username,
+                date: this.date,
+                content: this.content
+            }
+            blogVue.posts.push(postData);
+            this.title = ''
+            this.username = ''
+            this.date = ''
+            this.content = ''
+
+        }
+    }
+})

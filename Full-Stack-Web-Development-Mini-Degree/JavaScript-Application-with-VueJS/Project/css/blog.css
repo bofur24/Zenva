@@ -11,3 +11,11 @@ body {
     margin-bottom: 50px;
 }
 
+#blogPostCreation {
+    border: solid 2px black;
+}
+
+#blogPostCreation > * {
+    margin: 10px;
+}
+
