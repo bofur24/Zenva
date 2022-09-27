@@ -30,13 +30,25 @@ let postBlogVue = new Vue ({
     },
     methods: {
         publishPost: function() {
+<<<<<<< HEAD
             let newPost = {
+=======
+            let postData = {
+>>>>>>> fcaa618a3b81a75f1a1e428a873884683cf40a06
                 title: this.title,
                 username: this.username,
                 date: this.date,
                 content: this.content
             }
+<<<<<<< HEAD
             blogVue.posts.push(newPost)
+=======
+            blogVue.posts.push(postData);
+            this.title = ''
+            this.username = ''
+            this.date = ''
+            this.content = ''
+>>>>>>> fcaa618a3b81a75f1a1e428a873884683cf40a06
 
         }
     }
