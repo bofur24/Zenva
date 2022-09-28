@@ -3,5 +3,9 @@
 } */
 
 .highlight {
-    color: #FF0;
+    color: #00f;
+}
+
+.item {
+    margin-left: 8px;
 }
