@@ -1,11 +1,21 @@
-/* .highlight {
+.highlight-red {
     color: #f00;
 } */
 
-.highlight {
+.highlight-blue {
     color: #00f;
 }
 
 .item {
     margin-left: 8px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #cfc;
+}
+
+.hightlight {
+    background-color: #fcc;
 }
